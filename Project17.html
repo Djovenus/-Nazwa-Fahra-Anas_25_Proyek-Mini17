@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project 17</title>
+    <style>
+        .body {
+            margin-left: 35%;
+            margin-top: 6%;
+            font-size: 40px;
+            font-family: Times New Roman;
+        }
+    </style>
+    <script>
+        function changeColor(color) {
+            let items = document.getElementsByClassName("List"); 
+            for (var i = 0; i < items.length; i++) {
+                items[i].style.color = color;
+            }
+        }
+
+        function changeHover(color) {
+            let items = document.getElementsByClassName("List"); 
+            for (var i = 0; i < items.length; i++) {
+                items[i].onmouseover = function() {
+                    this.style.backgroundColor = color;
+                }
+                items[i].onmouseout = function() {
+                    this.style.backgroundColor = ""; // Reset background on mouse out
+                }
+            }
+        }
+    </script>
+</head>
+<body class="body">
+    <ul class="List"> <!-- Changed to class -->
+        <li>Manggis</li>
+        <li>Manggah</li>
+        <li>Alpukat</li>
+        <li>Sirsak</li>
+        <li>Durian</li>
+        <li>Rambutan</li>    
+    </ul>
+  
+    <h1 class="Teks">Warna Teks</h1> 
+    <input type="radio" onclick="changeColor(this.value)" name="color" value="Blue"> Biru
+    <input type="radio" onclick="changeColor(this.value)" name="color" value="Green"> Hijau
+    <input type="radio" onclick="changeColor(this.value)" name="color" value="Yellow"> Kuning
+  
+    <h1 class="hover">Warna Hover</h1>
+    <input type="radio" onclick="changeHover(this.value)" name="hoverColor" value="Red"> Merah
+    <input type="radio" onclick="changeHover(this.value)" name="hoverColor" value="Brown"> Cokelat
+    <input type="radio" onclick="changeHover(this.value)" name="hoverColor" value="Pink"> Pink
+</body>
+</html>
